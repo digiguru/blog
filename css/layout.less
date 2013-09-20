@@ -1,7 +1,30 @@
-@test: blue;
+// # Screen size breakpoints:
+@large: 78em;
+@medium: 55em;
+@small: 38em;
 
-.section { margin: 0 10%; padding: 1em; }
+@dot: .063em; 
 
-@media screen and (min-width: 78em) {
-    .section { width: 70em; margin: 0 auto; background: @test; }
+.section { min-width: (@small / 2); margin: 0 auto;
+           background: #ccc; }
+
+// ## Maximum Screen size
+@media screen and (min-width: @large) {
+    .section { width: @large - 12em; }
+}
+
+
+// ## Large Screen Display
+@media screen and (min-width: @medium) and (max-width: (@large - @dot)) {
+    .section { width: 85%; margin: 0 7.5%; }
+}
+
+// ## Medium Screen Display
+@media screen and (min-width: @small) and (max-width: (@medium - @dot)) {
+    .section { width: 90%; margin: 0 5%; }
+}
+
+// ## Small/Mobile Screen Display
+@media screen and (max-width: (@small - @dot)) {
+    .section { width: 95%; margin: 0 2.5%; }
 }

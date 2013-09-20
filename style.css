@@ -383,13 +383,30 @@ table {
   *zoom: 1;
 }
 .section {
-  margin: 0 10%;
-  padding: 1em;
+  min-width: 19em;
+  margin: 0 auto;
+  background: #ccc;
 }
 @media screen and (min-width: 78em) {
   .section {
-    width: 70em;
-    margin: 0 auto;
-    background: #0000ff;
+    width: 66em;
+  }
+}
+@media screen and (min-width: 55em) and (max-width: 77.937em) {
+  .section {
+    width: 85%;
+    margin: 0 7.5%;
+  }
+}
+@media screen and (min-width: 38em) and (max-width: 54.937em) {
+  .section {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+@media screen and (max-width: 37.937em) {
+  .section {
+    width: 95%;
+    margin: 0 2.5%;
   }
 }
